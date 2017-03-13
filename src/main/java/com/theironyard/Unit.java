@@ -10,7 +10,7 @@ package com.theironyard;
  * Follow the instructions below to create this enum.
  */
 // todo: create a new enum named "Unit"
-
+public enum Unit {
     /*
         We need to have a set of values defined for our units. Each of these
         values has an associated number, which is the length in millimeters. For
@@ -43,6 +43,15 @@ package com.theironyard;
         millimeter = 1 millimeters
      */
     // todo: define Unit enum values
+    MILE(1609344),
+    YARD(914.4),
+    FOOT(304.8),
+    INCH(25.4),
+    KILOMETER(1000000),
+    METER(1000),
+    CENTIMETER(10),
+    MILLIMETER(1);
+
 
 
 
@@ -51,7 +60,7 @@ package com.theironyard;
         enum value.
      */
     // todo: define a private property to hold the number of millimeters represented by this Unit value
-
+    private double numericValue;
 
     /**
      * Create a constructor that accepts the number of millimeters for the unit
@@ -59,7 +68,9 @@ package com.theironyard;
      * @param millimeters The number of millimeters for a given unit. EG: 914.4 for a yard.
      */
     // todo: create the Unit enum's constructor.
-
+    private Unit(double millimeters){
+        this.numericValue = millimeters;
+    }
 
     /**
      * Create a method named `toMillimeters` that returns the number of
@@ -67,4 +78,7 @@ package com.theironyard;
      * @return The number of millimeters in this unit. EG: 201168 for a furlong
      */
     // todo: create toMillimeters method
-
+    public double toMillimeters(){
+        return this.numericValue;
+    }
+}
